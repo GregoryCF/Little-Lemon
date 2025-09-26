@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function Nav() {
   return (
     <nav className="container">
@@ -10,7 +12,7 @@ function Nav() {
       </button>
       <ul>
         <li>
-          <a href="#">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <a href="#">About</a>
@@ -19,7 +21,7 @@ function Nav() {
           <a href="#">Menu</a>
         </li>
         <li>
-          <a href="#">Reservations</a>
+          <Link to="/booking">Reservations</Link>
         </li>
         <li>
           <a href="#">Order Online</a>
