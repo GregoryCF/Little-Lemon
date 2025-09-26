@@ -1,9 +1,24 @@
 function Header() {
   return (
     <header>
+      <div className="background"></div>
       <div className="container">
-        <section>Header content</section>
-        <img src="/restauranfood.jpg" width={375} height={325} />
+        <div className="header">
+          <h1 className="display-title">Little Lemon</h1>
+          <h2 className="display-subtitle">Chicago</h2>
+        </div>
+        <article>
+          <p>
+            Little Lemon is a family-owned Mediterranean restaurant, focused on
+            traditional recipes served with a modern twist.
+          </p>
+          <button>Reserve a Table</button>
+        </article>
+        <img
+          src="/restauranfood.jpg"
+          style={{ borderRadius: 16 }}
+          alt="Some food"
+        />
       </div>
     </header>
   );
