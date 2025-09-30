@@ -5,7 +5,9 @@ import "./index.css";
 import App from "./App";
 import HomePage from "./components/Homepage";
 import BookingPage from "./components/BookingPage";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 import reportWebVitals from "./reportWebVitals";
+import { TimesProvider } from "./context/TimesContex";
 
 function AppRouter() {
   return (
@@ -13,6 +15,7 @@ function AppRouter() {
       <Route path="/" element={<App />}>
         <Route index element={<HomePage />}></Route>
         <Route path="/booking" element={<BookingPage />}></Route>
+        <Route path="/success" element={<ConfirmedBooking />}></Route>
       </Route>
     </Routes>
   );
@@ -22,7 +25,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AppRouter />
+      <TimesProvider>
+        <AppRouter />
+      </TimesProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
