@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router";
+
 function CallToAction() {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => navigate("/booking");
+
   return (
     <>
       <div className="header">
@@ -10,7 +16,7 @@ function CallToAction() {
           Little Lemon is a family-owned Mediterranean restaurant, focused on
           traditional recipes served with a modern twist.
         </p>
-        <button>Reserve a Table</button>
+        <button onClick={handleNavigation}>Reserve a Table</button>
       </article>
       <img
         src="/restauranfood.jpg"

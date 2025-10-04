@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router";
 import { submitAPI } from "../api/api";
 import { useAvailableTimes } from "../hooks/useAvailableTimes";
 import BookingForm from "./BookingForm";
-import { useNavigate } from "react-router";
 
 function BookingPage() {
   const lastDateRef = useRef("");
@@ -24,8 +24,11 @@ function BookingPage() {
   };
 
   const submitForm = (formData) => {
-    submitAPI(formData);
-    navigate("/success");
+    const isSuccess = submitAPI(formData);
+    if (isSuccess) {
+      localStorage.setItem("form", JSON.stringify(form));
+      navigate("/success");
+    }
   };
 
   useEffect(() => {

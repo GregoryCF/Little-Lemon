@@ -1,57 +1,72 @@
+import { Link } from "react-router";
+
 function Footer() {
   return (
     <footer>
       <div className="container">
-        <img src="/restaurant.jpg" width={162} height={279} alt="A nice restaurant" />
+        <img
+          src="/restaurant.jpg"
+          width={162}
+          height={279}
+          alt="A nice restaurant"
+        />
         <div>
           <div>
             <h5>Doormat Navigation</h5>
             <ul>
               <li>
-                <a href="#">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="#">About</a>
+                <span style={{ color: "gray", cursor: "not-allowed" }}>
+                  About
+                </span>
               </li>
               <li>
-                <a href="#">Menu</a>
+                <span style={{ color: "gray", cursor: "not-allowed" }}>
+                  Menu
+                </span>
               </li>
               <li>
-                <a href="#">Reservations</a>
+                <Link to="/booking">Reservations</Link>
               </li>
               <li>
-                <a href="#">Order Online</a>
+                <span style={{ color: "gray", cursor: "not-allowed" }}>
+                  Order Online
+                </span>
               </li>
               <li>
-                <a href="#">Login</a>
+                <span style={{ color: "gray", cursor: "not-allowed" }}>
+                  Login
+                </span>
               </li>
             </ul>
           </div>
           <div>
             <h5>Contact</h5>
             <ul>
-              <li>
-                Address
-              </li>
-              <li>
-                Phone number
-              </li>
-              <li>
-                Email
-              </li>
+              <li>Address</li>
+              <li>Phone number</li>
+              <li>Email</li>
             </ul>
           </div>
           <div>
             <h5>Social Media Links</h5>
             <ul>
               <li>
-                <a href="#">Instagram</a>
+                <Link to="https://www.instagram.com" target="_blank">
+                  Instagram
+                </Link>
               </li>
               <li>
-                <a href="#">Facebook</a>
+                <Link to="https://www.facebook.com" target="_blank">
+                  Facebook
+                </Link>
               </li>
               <li>
-                <a href="#">Twitter</a>
+                <Link to="https://www.x.com" target="_blank">
+                  Twitter
+                </Link>
               </li>
             </ul>
           </div>

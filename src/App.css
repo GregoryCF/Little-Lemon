@@ -22,7 +22,8 @@ img {
   object-fit: cover;
 }
 
-button {
+button,
+input[type="submit"] {
   font-family: "Karla", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -33,6 +34,22 @@ button {
   border-radius: 16px;
   border: none;
   cursor: pointer;
+}
+
+button:disabled,
+input[type="submit"]:disabled {
+  color: var(--primary-color);
+  background-color: var(--highlight-light-color);
+  cursor: not-allowed;
+}
+
+button:disabled img {
+  opacity: 0.6;
+}
+
+button:hover:not(:disabled),
+input[type="submit"]:hover:not(:disabled) {
+  opacity: 0.9;
 }
 
 p {
@@ -59,6 +76,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: 84px;
+  position: relative;
 }
 
 nav > button {
@@ -74,7 +92,35 @@ nav > img {
 }
 
 nav > ul {
-  display: none;
+  display: block;
+  position: absolute;
+  left: -5vw;
+  right: -5vw;
+  top: 84px;
+  list-style-type: none;
+  background-color: white;
+  z-index: 10;
+  padding-left: 5vw;
+  transition: height 0.5s ease;
+  overflow: hidden;
+}
+
+nav > ul > li {
+  height: 48px;
+}
+
+nav > ul > li > button,
+nav > ul > li > span {
+  display: block;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: transparent;
+  padding: 0;
+  height: auto;
 }
 
 header {
@@ -173,7 +219,7 @@ footer > .container,
 }
 
 .container {
-  max-width: 90vw;
+  width: 90vw;
   margin: 0 auto;
 }
 
@@ -350,8 +396,33 @@ footer > .container,
   height: 150px;
 }
 
+form .control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+form input,
+form select {
+  height: 35px;
+}
+
+table th {
+  text-align: left;
+}
+
+table td {
+  text-align: right;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 4px;
+}
+
 @media only screen and (min-width: 1080px) {
-  button {
+  button,
+  input[type="submit"] {
     font-size: 18px;
     padding-left: 36px;
     padding-right: 36px;
@@ -366,6 +437,7 @@ footer > .container,
     justify-content: flex-start;
     gap: 45px;
     height: 96px;
+    position: static;
   }
 
   nav > button {
@@ -377,26 +449,26 @@ footer > .container,
   }
 
   nav > ul {
+    position: static;
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
-    list-style-type: none;
     padding: 0;
     margin: 0;
   }
 
   nav > ul > li {
     flex-grow: 1;
+    height: auto;
   }
 
-  nav > ul > li > a {
-    display: block;
-    width: 100%;
+  nav > ul > li > button,
+  nav > ul > li > span {
     text-align: center;
-    text-decoration: none;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 500;
+  }
+
+  nav > ul > li > button:hover {
+    opacity: 0.8;
   }
 
   header p {
@@ -538,5 +610,16 @@ footer > .container,
   #about-section .image-overlay > img {
     width: 270px;
     height: 335px;
+  }
+
+  form,
+  table {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  form input,
+  form select {
+    height: 48px;
   }
 }

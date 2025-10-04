@@ -14,7 +14,7 @@ function Specials() {
         </div>
         <div className="header-desktop">
           <h3 className="display-title">This week's specials!</h3>
-          <button>Online Menu</button>
+          <button disabled>Online Menu</button>
         </div>
         <div>
           <div className="card">
@@ -28,7 +28,7 @@ function Specials() {
                 rosemary croutons.
               </p>
               <div className="card-actions">
-                <button className="card-button">
+                <button className="card-button" disabled>
                   Order a delivery{" "}
                   <img
                     src="delivery_icon.svg"
@@ -50,7 +50,7 @@ function Specials() {
                 with garlic and seasoned with salt and olive oil.
               </p>
               <div className="card-actions">
-                <button className="card-button">
+                <button className="card-button" disabled>
                   Order a delivery{" "}
                   <img
                     src="delivery_icon.svg"
@@ -73,7 +73,7 @@ function Specials() {
                 imagined.
               </p>
               <div className="card-actions">
-                <button className="card-button">
+                <button className="card-button" disabled>
                   Order a delivery{" "}
                   <img
                     src="delivery_icon.svg"
